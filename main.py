@@ -3,24 +3,24 @@ import random
 casillasGenerales = list(range(1, 69))
 casillasSeguras = [12, 17, 29, 34, 46, 51, 63, 68]
 salidas = {
-    "Rojo": 5,
+    "Amarillo": 5,
     "Azul": 22,
-    "Verde": 39,
-    "Amarillo": 56
+    "Rojo": 39,
+    "Verde": 56
 }
 
 entradas_llegada = {
-    "Rojo": 68,
+    "Amarillo": 68,
     "Azul": 17,
-    "Verde": 34,
-    "Amarillo": 51
+    "Rojo": 34,
+    "Verde": 51
 }
 
 casillasLlegada = {
-    "Rojo": list(range(69, 77)),
+    "Amarillo": list(range(69, 77)),
     "Azul": list(range(77, 85)),
-    "Verde": list(range(85, 93)),
-    "Amarillo": list(range(93, 101))
+    "Rojo": list(range(85, 93)),
+    "Verde": list(range(93, 101))
 }
 
 paresConsecutivos = {}
@@ -63,7 +63,7 @@ def empezarJuego():
     modoDesarrollador = (modo == 2)
     
     Njugadores = get_int("Elige un número de jugadores, máximo de 4: ", 2, 4)
-    colores = ["Rojo", "Azul", "Verde", "Amarillo"]
+    colores = ["Amarillo", "Azul", "Rojo", "Verde"]
     jugadores = []
     
     for i in range(Njugadores):
@@ -700,4 +700,3 @@ def tirarDados(color, fichas, jugadores):
     return True
 
 if __name__ == "__main__":
-    empezarJuego()
