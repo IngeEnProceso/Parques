@@ -1,4 +1,31 @@
 import random
+import pygame
+
+pygame.init()
+
+screen = pygame.display.set_mode((500, 500))
+pygame.display.set_caption("Parqués de Programadores")
+pygame.display.set_icon(pygame.image.load("logo.png"))
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
+
+imagenFondo = pygame.image.load("tablero.png")
+imagenFondo = pygame.transform.scale(imagenFondo, (500, 500))
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    screen.fill(WHITE)
+    screen.blit(imagenFondo, (0, 0))
+    pygame.display.flip()
+
 casillasGenerales = list(range(1, 69))
 casillasSeguras = [12, 17, 29, 34, 46, 51, 63, 68]
 salidas = {
