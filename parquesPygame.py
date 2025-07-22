@@ -341,12 +341,6 @@ def hayBloqueo(pos, jugadores, color_actual):
                 return False
     
     return True
-
-def calcularRecorrido(pos_actual, pos_destino):
-    if pos_destino >= pos_actual:
-        return pos_destino - pos_actual
-    else:
-        return (68 - pos_actual) + pos_destino
     
 def puedeAtravesarBloqueo(ficha_pos, destino_pos, jugadores, color_actual):
     if ficha_pos > destino_pos:
