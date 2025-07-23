@@ -160,17 +160,6 @@ def procesarEventosPygame():
             pygame.quit()
             exit()
 
-def esperarInput(mensaje):
-    print(mensaje)
-    esperando = True
-    while esperando:
-        procesarEventosPygame()
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_RETURN] or keys[pygame.K_SPACE]:
-            esperando = False
-            pygame.time.wait(200)  
-    return ""
-
 imagenFondo = pygame.image.load("tablero.png")
 imagenFondo = pygame.transform.scale(imagenFondo, (500, 500))
 
@@ -266,7 +255,6 @@ def empezarJuego():
             if verificarVictoria(fichas):
                 actualizarPantalla(jugadores)
                 print(f"\n¡{color} ha ganado!")
-                esperarInput("Presiona ENTER o ESPACIO para salir...")
                 return
 
 def SePuedeSacarFicha(dado1, dado2):
